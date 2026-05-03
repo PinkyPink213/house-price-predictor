@@ -1,5 +1,4 @@
-ืname: Streamlit CI
-
+name: Streamlit CI
 on:
     push:
         paths:
