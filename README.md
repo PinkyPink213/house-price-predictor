@@ -20,15 +20,35 @@ house-price-predictor/
 
 ---
 
-## 🛠️ Setting up Learning/Development Environment
+## 🔄 CI/CD Pipeline
 
-To begin, ensure the following tools are installed on your system:
+This project uses a complete MLOps + GitOps CI/CD workflow powered by GitHub Actions, Docker, MLflow, Kubernetes, Kustomize, and ArgoC
 
-- [Python 3.11](https://www.python.org/downloads/)
-- [Git](https://git-scm.com/)
-- [Visual Studio Code](https://code.visualstudio.com/) or your preferred editor
-- [UV – Python package and environment manager](https://github.com/astral-sh/uv)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) **or** [Podman Desktop](https://podman-desktop.io/)
+### 🏗️ Pipeline Overview
+
+```
+Developer Push
+      │
+      ▼
+ GitHub Actions CI
+      │
+      ├── Data Processing
+      ├── Feature Engineering
+      ├── Model Training
+      ├── MLflow Tracking
+      ├── Docker Image Build
+      └── Push Image to DockerHub
+      │
+      ▼
+ Update Kubernetes Manifests
+      │
+      ▼
+ ArgoCD Detects Changes
+      │
+      ▼
+ Kubernetes Deployment
+
+```
 
 ---
 
